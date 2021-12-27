@@ -1,12 +1,49 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <title>My First Parcel App</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="app.js"></script>
-  </head>
-  <body>
-    <h1>Hello, World!</h1>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <title>My First Parcel App</title>
+  <!-- BEGIN FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600&display=swap" rel="stylesheet">
+  <!-- END FONTS -->
+
+  <script type="module" src="app.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div id="login-container">
+      <div id="login">
+        <header>
+          <h2>Login</h2>
+        </header>
+        <aside>
+          <form>
+            <div class="col">
+              <input type="text" id="username" name="username" />
+              <label for="username">Username</label>
+            </div>
+            <div class="col">
+              <input type="password" id="password" name="password" />
+              <label for="password">Password</label>
+            </div>
+            <div class="col">
+              <a href="#forgot">Forgot Password?</a>
+            </div>
+            <div class="col">
+              <button type="button" id="btn-login">Login</button>
+            </div>
+          </form>
+        </aside>
+        <footer>
+          <p>Not a member? <a href="#signup">Signup</a></p>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
