@@ -1,4 +1,322 @@
-h1 {
-  color: hotpink;
-  font-family: cursive;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* END RESET.CSS */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: #999;
+  width: 100vw;
+  height: auto;
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-size: 16px;
+  font-weight: 300;
+  background-color: darksalmon;
+}
+
+h1, h2, h3, h4, h5, h6, strong, b {
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(9, 142, 179, .75);
+  transition: color .3s;
+}
+
+a:hover {
+  color: rgba(9, 142, 179, 1);
+}
+
+#post-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding: 2rem;
+}
+
+.dot {
+  padding: .25rem;
+  margin: 0 .25rem;
+  display: inline-block;
+}
+
+.dot:after {
+  content: '';
+  display: block;
+  width: .25rem;
+  height: .25rem;
+  border-radius: 50%;
+  background-color: rgba(100, 100, 100, .75);
+}
+
+.icon svg {
+  display: inline-block;
+  width: 1rem;
+}
+
+.post {
+  background-color: #fff;
+  width: 600px;
+  overflow: hidden;
+  border-radius: .5rem;
+}
+
+.post header {
+  display: flex;
+  padding: 1rem 1.5rem;
+  flex-direction: row;
+  position: relative;
+}
+
+.post header .profile-image {
+  width: 3.5rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.post header .profile {
+  flex: 1 0 auto;
+}
+
+.post header .profile .name {
+  margin-bottom: .5rem;
+  color: #333;
+}
+
+.post header .profile .followers {
+  margin-bottom: .5rem;
+  font-size: .875rem;
+}
+
+.post header .profile .info {
+  display: flex;
+  align-items: center;
+  font-size: .875rem;
+}
+
+.post header .actions {
+  position: relative;
+}
+
+.post header .actions>a {
+  display: flex;
+  justify-content: space-around;
+  width: 1.5rem;
+  height: 1rem;
+  padding-top: .25rem;
+}
+
+.post header .actions>a .dot {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.post header .actions>a+ul {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.post header .actions>a+ul>li {
+  margin: 0;
+  padding: 0;
+}
+
+.post header .actions>a+ul>li+li {
+  border-top: 1px solid #ccc;
+}
+
+.post header .actions>a+ul>li>a {
+  display: block;
+  margin: 0;
+  padding: .5rem 1rem;
+  color: #ccc;
+  background-color: #fff;
+  transition: all .3s;
+}
+
+.post header .actions>a+ul>li>a:hover {
+  background-color: #ccc;
+  color: #fff;
+}
+
+.post header .actions>a:hover+ul,
+.post header .actions>a+ul:hover {
+  display: block;
+}
+
+.post aside .description {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.post aside .description .see-more {
+  color: #333;
+  cursor: pointer;
+}
+
+.post aside .banner {
+  width: 100%;
+  height: 20rem;
+  background: no-repeat center center;
+  background-image: url('../assets/google.jpg');
+  background-size: cover;
+}
+
+.post aside .image-info {
+  padding: 1rem;
+  background-color: #f3f3f3;
+}
+
+.post aside .image-info h4 {
+  margin-bottom: .5rem;
+  color: #666;
+}
+
+.post aside .image-info p {
+  color: rgba(119, 119, 119, .75);
+  font-size: .875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.post aside .image-info p a {
+  color: rgba(119, 119, 119, .75);
+}
+
+.post aside .image-info p a:hover {
+  color: rgba(119, 119, 119, 1);
+}
+
+.post footer {
+  padding: 1rem;
+}
+
+.post footer .interaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post footer .interaction .likes {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.post footer .interaction .likes .icons {
+  margin-right: .5rem;
+}
+
+.post footer .interaction .likes,
+.post footer .interaction .comments {
+  font-size: .875rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.post footer .interaction .comments a {
+  color: #666;
+}
+
+.post footer .interaction .comments a:hover {
+  color: #333;
+}
+
+.post footer>hr {
+  border: none;
+  margin-top: .875rem;
+  margin-bottom: .875rem;
+  border-bottom: 1px solid rgba(0, 0, 0, .25);
+}
+
+.post footer .action-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.post footer .action-buttons .action-button a {
+  display: flex;
+  align-items: center;
+  color: #666;
+  font-weight: 600;
+}
+
+.post footer .action-buttons .action-button a:hover {
+  color: #333;
+}
+
+.post footer .action-buttons .action-button a i {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: .5rem;
 }
